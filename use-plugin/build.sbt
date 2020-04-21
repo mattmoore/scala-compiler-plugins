@@ -14,6 +14,6 @@ lazy val root = (project in file("."))
 
 autoCompilerPlugins := true
 
-addCompilerPlugin("io.mattmoore" %% "scala-compiler-plugin-example" % "0.0.1-SNAPSHOT")
+addCompilerPlugin("io.mattmoore.scala.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
 
 resolvers += Resolver.mavenLocal
