@@ -26,6 +26,19 @@ class CompilerPluginComponent(val global: Global) extends PluginComponent with T
 
   class MyTypingTransformer(unit: CompilationUnit) extends TypingTransformer(unit) {
     override def transform(tree: Tree) = tree match {
+      case dd: DefDef if (dd.mods.annotations.size > 0) =>
+        println(dd)
+        val ddd = treeCopy.DefDef(dd, dd.mods, dd.name,
+          dd.tparams, dd.vparamss, dd.tpt, Block(
+            q"""println("Inside - before")""",
+            DefDef(Modifiers(), TermName("runMethod"), List(),
+              List(), TypeTree(), dd.rhs),
+            q"val r = runMethod",
+            q"""println("Inside - after")""",
+            q"r"
+          ))
+        println(ddd)
+        ddd
       case _ => super.transform(tree)
     }
   }
