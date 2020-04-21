@@ -19,7 +19,6 @@ class CompilerPluginComponent(val global: Global) extends PluginComponent with T
 
   override def newPhase(prev: Phase): Phase = new StdPhase(prev) {
     override def apply(unit: global.CompilationUnit): Unit = {
-      global.reporter.echo("implement me ")
       unit.body = new MyTypingTransformer(unit).transform(unit.body)
     }
   }
