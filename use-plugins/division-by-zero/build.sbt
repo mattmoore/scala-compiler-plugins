@@ -6,7 +6,7 @@ ThisBuild / organization     := "io.mattmoore"
 
 lazy val root = (project in file("."))
   .settings(
-    name := "Scala Compiler Plugin Use Example",
+    name := "Using the division-by-zero plugin.",
     libraryDependencies += scalaTest % Test
   )
 
