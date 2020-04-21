@@ -6,14 +6,15 @@ Compile-time checking of code is a useful feature because it allows us to catch 
 
 ## Projects
 
-There are two sbt projects in this repo:
+There are two breakdowns to this project:
 
-1. [plugin](plugin) The Scala compiler plugin itself.
-1. [use-plugin](use-plugin) A simple Scala project that uses the plugin.
+1. [plugins](plugins) The Scala compiler plugins.
+1. [use-plugin](use-plugin) A simple Scala project that uses the [division-by-zero plugin](plugins/division-by-zero).
 
 First, compile and publish the plugin as a jar file to your local Ivy repo:
 
 ```scala
+cd plugins/division-by-zero
 sbt compile package publishLocal
 ```
 
@@ -21,7 +22,7 @@ Next, use the plugin in your project by adding to build.sbt following lines:
 
 ```scala
 autoCompilerPlugins := true
-addCompilerPlugin("io.mattmoore" %% "scala-compiler-plugin-example" % "0.0.1-SNAPSHOT")
+addCompilerPlugin("io.mattmoore.scala.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
 resolvers += Resolver.mavenLocal
 ```
 
