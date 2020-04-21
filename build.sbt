@@ -7,3 +7,5 @@ scalaVersion := "2.13.1"
 organization := "io.mattmoore"
 
 libraryDependencies += "org.scala-lang" % "scala-compiler" % "2.13.1"
+
+sbtPlugin := true

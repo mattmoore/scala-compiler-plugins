@@ -1,4 +1,4 @@
 <plugin>
-  <name>scala-compiler-plugin-template</name>
+  <name>scala-compiler-plugin-example</name>
   <classname>io.mattmoore.ScalaCompilerPlugin</classname>
 </plugin>
