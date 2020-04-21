@@ -27,7 +27,7 @@ resolvers += Resolver.mavenLocal
 
 ## Running the Experiment
 
-The `build.sbt` configuration above is in the [use-plugin](use-plugin/build.sbt) file already.
+The `build.sbt` configuration above is in the [use-plugin/build.sbt](use-plugin/build.sbt) file already.
 
 You can experiment with turning the plugin on or off. Just comment the `addCompilerPlugin` line out to disable it.
 
