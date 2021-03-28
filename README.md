@@ -28,7 +28,7 @@ Next, use the plugin in your project by adding to build.sbt following lines:
 
 ```scala
 autoCompilerPlugins := true
-addCompilerPlugin("io.mattmoore.scala.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
+addCompilerPlugin("io.mattmoore.scala2.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
 resolvers += Resolver.mavenLocal
 ```
 
