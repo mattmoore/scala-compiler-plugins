@@ -1,4 +1,4 @@
 <plugin>
   <name>division-by-zero</name>
-  <classname>io.mattmoore.scala.compiler.plugins.DivisionByZero</classname>
+  <classname>io.mattmoore.scala2.compiler.plugins.DivisionByZero</classname>
 </plugin>

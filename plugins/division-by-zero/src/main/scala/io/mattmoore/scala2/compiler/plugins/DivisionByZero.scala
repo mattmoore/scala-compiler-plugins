@@ -1,4 +1,4 @@
-package io.mattmoore.scala.compiler.plugins
+package io.mattmoore.scala2.compiler.plugins
 
 import scala.tools.nsc
 import nsc.Global
