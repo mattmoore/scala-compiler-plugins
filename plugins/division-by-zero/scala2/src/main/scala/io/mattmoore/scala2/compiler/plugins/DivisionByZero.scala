@@ -1,10 +1,7 @@
 package io.mattmoore.scala2.compiler.plugins
 
-import scala.tools.nsc
-import nsc.Global
-import nsc.Phase
-import nsc.plugins.Plugin
-import nsc.plugins.PluginComponent
+import scala.tools.nsc.plugins.{Plugin, PluginComponent}
+import scala.tools.nsc.{Global, Phase}
 
 class DivisionByZero(val global: Global) extends Plugin {
 
@@ -25,9 +22,12 @@ class DivisionByZero(val global: Global) extends Plugin {
       override def name = DivisionByZero.this.name
 
       def apply(unit: CompilationUnit): Unit = {
-        for (tree@Apply(Select(rcvr, nme.DIV), List(Literal(Constant(0)))) <- unit.body
-             if rcvr.tpe <:< definitions.IntClass.tpe) {
-          global.reporter.error(tree.pos, "attempting division by zero")
+        for (
+          tree @ Apply(Select(rcvr, nme.DIV), List(Literal(Constant(0)))) <-
+            unit.body
+          if rcvr.tpe <:< definitions.IntClass.tpe
+        ) {
+          global.reporter.error(tree.pos, "Attempting division by zero.")
         }
       }
     }
