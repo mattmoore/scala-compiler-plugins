@@ -9,7 +9,7 @@ import dotty.tools.dotc.core.Decorators.*
 import dotty.tools.dotc.core.StdNames.*
 import dotty.tools.dotc.core.Symbols.*
 import dotty.tools.dotc.plugins.{PluginPhase, StandardPlugin}
-import dotty.tools.dotc.transform.{Pickler, Staging}
+import dotty.tools.dotc.transform.{PickleQuotes, Staging}
 
 class DivisionByZero extends StandardPlugin:
   val name: String = "divideZero"
@@ -24,7 +24,7 @@ class DivisionByZeroPhase extends PluginPhase:
   val phaseName = "divideZero"
 
   override val runsAfter = Set(Staging.name)
-  override val runsBefore = Set(Pickler.name)
+  override val runsBefore = Set(PickleQuotes.name)
 
   override def transformApply(tree: Apply)(implicit ctx: Context): Tree =
     tree match

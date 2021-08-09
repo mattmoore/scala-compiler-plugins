@@ -10,18 +10,18 @@ lazy val root = (project in file("."))
 
 lazy val scala2 = project
   .settings(
-    organization := "io.mattmoore.scala3.compiler.plugins",
+    organization := "io.mattmoore.scala2.compiler.plugins",
     name := "Using the division-by-zero plugin for Scala 2.",
-    scalaVersion := "2.13.5",
+    scalaVersion := "2.13.6",
     autoCompilerPlugins := true,
     addCompilerPlugin("io.mattmoore.scala2.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
   )
 
 lazy val scala3 = project
   .settings(
-    organization := "io.mattmoore.scala2.compiler.plugins",
+    organization := "io.mattmoore.scala3.compiler.plugins",
     name := "Using the division-by-zero plugin for Scala 3.",
-    scalaVersion := "3.0.0-RC1",
+    scalaVersion := "3.0.1",
     autoCompilerPlugins := true,
     addCompilerPlugin("io.mattmoore.scala3.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
   )
