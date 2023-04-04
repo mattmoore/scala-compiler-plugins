@@ -1,4 +1,4 @@
-package io.mattmoore.scala3.compiler.plugins
+package io.mattmoore.scala.compiler.plugins
 
 object DivisionByZero extends App {
   val three = 3

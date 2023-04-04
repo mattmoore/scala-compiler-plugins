@@ -1,4 +1,4 @@
-package io.mattmoore.scala3.compiler.plugins
+package io.mattmoore.scala.compiler.plugins
 
 import dotty.tools.dotc.report
 import dotty.tools.dotc.ast.Trees.*

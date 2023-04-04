@@ -13,7 +13,7 @@ lazy val root = (project in file("."))
 
 lazy val scala2 = project
   .settings(
-    organization := "io.mattmoore.scala2.compiler.plugins",
+    organization := "io.mattmoore.scala.compiler.plugins",
     name := "division-by-zero",
     scalaVersion := scala2Version,
     libraryDependencies ++= List(
@@ -23,7 +23,7 @@ lazy val scala2 = project
 
 lazy val scala3 = project
   .settings(
-    organization := "io.mattmoore.scala3.compiler.plugins",
+    organization := "io.mattmoore.scala.compiler.plugins",
     name := "division-by-zero",
     scalaVersion := scala3Version,
     libraryDependencies ++= List(

@@ -13,20 +13,20 @@ lazy val root = (project in file("."))
 
 lazy val scala2 = project
   .settings(
-    organization := "io.mattmoore.scala2.compiler.plugins",
+    organization := "io.mattmoore.scala.compiler.plugins",
     name := "Using the division-by-zero plugin for Scala 2.",
     scalaVersion := scala2Version,
     autoCompilerPlugins := true,
-    addCompilerPlugin("io.mattmoore.scala2.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
+    addCompilerPlugin("io.mattmoore.scala.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
   )
 
 lazy val scala3 = project
   .settings(
-    organization := "io.mattmoore.scala3.compiler.plugins",
+    organization := "io.mattmoore.scala.compiler.plugins",
     name := "Using the division-by-zero plugin for Scala 3.",
-    scalaVersion := scala2Version,
+    scalaVersion := scala3Version,
     autoCompilerPlugins := true,
-    addCompilerPlugin("io.mattmoore.scala3.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
+    addCompilerPlugin("io.mattmoore.scala.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
   )
 
 resolvers += Resolver.mavenLocal

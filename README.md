@@ -24,19 +24,11 @@ cd plugins/division-by-zero
 sbt compile package publishLocal
 ```
 
-Next, use the plugin in your project by adding to build.sbt following lines for Scala 2:
+Next, use the plugin in your project by adding to build.sbt following lines:
 
 ```scala
 autoCompilerPlugins := true
-addCompilerPlugin("io.mattmoore.scala2.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
-resolvers += Resolver.mavenLocal
-```
-
-For Scala 3, change this to (note the namespace has changed `scala2` to `scala3`):
-
-```scala
-autoCompilerPlugins := true
-addCompilerPlugin("io.mattmoore.scala3.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
+addCompilerPlugin("io.mattmoore.scala.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
 resolvers += Resolver.mavenLocal
 ```
 
@@ -48,8 +40,8 @@ When the plugin is disabled, the [division-by-zero example](use-plugins/division
 
 When the plugin is enabled, the project will fail to compile, throwing an error that division by zero is being attempted.
 
-## Why are there two different namespaces for Scala 2 and Scala 3 for the same plugin?
+## Scala 2 vs Scala 3
 
-TLDR: Because plugins for Scala 2 and Scala 3 are incompatible, and are therefore _not the same_. Scala 3 has changed the plugin system and it is quite different from the way Scala 2 works.
+Compiler plugins for Scala 2 and Scala 3 are incompatible. Scala 3 has changed the plugin system and it is quite different from the way Scala 2 works.
 
-Scala 3 removed the older analysis plugins that Scala 2 had. Instead, it now provides the "StandardPlugin" and "ResearchPlugin" types. Standard plugins do not have the ability to modify type information at compile time anymore. This is to prevent a compiler author from breaking type safety. If you need to fully control all phases, you would instead create a research plugin that allows full control of the compilation pipeline. For more information, see [Changes in Compiler Plugins](https://dotty.epfl.ch/docs/reference/changed-features/compiler-plugins.html).
+Scala 3 removed the older analysis plugins that Scala 2 had. Instead, it now provides the `StandardPlugin` and `ResearchPlugin` types. Standard plugins do not have the ability to modify type information at compile time anymore. This is to prevent a compiler author from breaking type safety. If you need to fully control all phases, you would instead create a research plugin that allows full control of the compilation pipeline. For more information, see [Changes in Compiler Plugins](https://dotty.epfl.ch/docs/reference/changed-features/compiler-plugins.html).

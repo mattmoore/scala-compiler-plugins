@@ -1,4 +1,4 @@
-package io.mattmoore.scala2.compiler.plugins
+package io.mattmoore.scala.compiler.plugins
 
 import scala.tools.nsc.plugins.{Plugin, PluginComponent}
 import scala.tools.nsc.{Global, Phase}
