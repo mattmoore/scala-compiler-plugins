@@ -2,3 +2,7 @@ target
 .bsp
 .idea
 .DS_Store
+.bloop
+.metals
+.vscode
+metals.sbt

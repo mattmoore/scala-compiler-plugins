@@ -1,5 +1,8 @@
 ThisBuild / version := "0.1.0-SNAPSHOT"
 
+lazy val scala2Version = "2.13.10"
+lazy val scala3Version = "3.2.2"
+
 lazy val root = (project in file("."))
   .aggregate(scala2, scala3)
   .settings(
@@ -12,7 +15,7 @@ lazy val scala2 = project
   .settings(
     organization := "io.mattmoore.scala2.compiler.plugins",
     name := "Using the division-by-zero plugin for Scala 2.",
-    scalaVersion := "2.13.6",
+    scalaVersion := scala2Version,
     autoCompilerPlugins := true,
     addCompilerPlugin("io.mattmoore.scala2.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
   )
@@ -21,7 +24,7 @@ lazy val scala3 = project
   .settings(
     organization := "io.mattmoore.scala3.compiler.plugins",
     name := "Using the division-by-zero plugin for Scala 3.",
-    scalaVersion := "3.0.1",
+    scalaVersion := scala2Version,
     autoCompilerPlugins := true,
     addCompilerPlugin("io.mattmoore.scala3.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
   )
