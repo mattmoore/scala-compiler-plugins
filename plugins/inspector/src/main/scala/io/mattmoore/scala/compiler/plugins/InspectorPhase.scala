@@ -8,15 +8,15 @@ import transform._
 import ast.tpd
 
 class InspectorPhase extends MegaPhase.MiniPhase {
-    import tpd._
+  import tpd._
 
-    val phaseName: String = "InspectorPhase"
-    private var enterSym: Symbol = _
+  val phaseName: String = "InspectorPhase"
+  private var enterSym: Symbol = _
 
-    override val runsAfter = Set(Pickler.name)
+  override val runsAfter = Set(Pickler.name)
 
-    override def transformDefDef(tree: DefDef)(using Context): Tree = {
-        println("TEST")
-        tree
-    }
+  override def transformDefDef(tree: DefDef)(using Context): Tree = {
+    println("TEST")
+    tree
+  }
 }

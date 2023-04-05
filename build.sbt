@@ -18,3 +18,6 @@ lazy val divisionByZeroPlugin = project in file("plugins/division-by-zero")
 lazy val inspectorPlugin = project in file("plugins/inspector")
 
 lazy val useDivisionByZero = project in file("use-plugins/division-by-zero")
+lazy val useInspector = project in file("use-plugins/inspector")
+
+resolvers += Resolver.mavenLocal

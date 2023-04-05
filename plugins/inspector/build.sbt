@@ -1,4 +1,4 @@
-import Dependencies._
+import Dependencies.*
 
 lazy val inspectorPlugin = (project in file("."))
   .settings(
