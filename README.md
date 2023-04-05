@@ -9,7 +9,7 @@ Compile-time checking of code is a useful feature because it allows us to catch 
 There are two categories in this repo:
 
 1. [plugins](plugins) The Scala compiler plugins.
-1. [use-plugins](use-plugins) Examples using the plugins created above. Each project in here is named after the plugin it uses.
+2. [use-plugins](use-plugins) Examples using the plugins created above. Each project in here is named after the plugin it uses.
 
 ## List of Plugins
 
@@ -19,8 +19,15 @@ There are two categories in this repo:
 
 First, compile and publish the plugin as a jar file to your local Ivy repo:
 
-```scala
+From the shell:
+
+```shell
 sbt clean compile package publishLocal
+```
+Or from an sbt session (by typing `sbt` and hitting enter):
+
+```shell
+clean;compile;package;publishLocal
 ```
 
 Next, use the plugin in your project by adding to build.sbt following lines:
@@ -33,8 +40,16 @@ resolvers += Resolver.mavenLocal
 
 The `build.sbt` configuration above is in the [use-plugins/division-by-zero/build.sbt](use-plugins/division-by-zero/build.sbt) file already. You can test this existing project. From the project's root directory:
 
+From your shell:
+
 ```shell
 sbt useDivisionByZero/clean useDivisionByZero/compile
+```
+
+Or from an `sbt` session:
+
+```shell
+useDivisionByZero/clean;useDivisionByZero/compile
 ```
 
 You can experiment with turning the plugin on or off. Just comment the `addCompilerPlugin` line out to disable it.
