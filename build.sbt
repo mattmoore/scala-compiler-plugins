@@ -1,4 +1,4 @@
-import Dependencies._
+import Dependencies.*
 
 ThisBuild / version := "0.0.1-SNAPSHOT"
 ThisBuild / sbtPlugin := false

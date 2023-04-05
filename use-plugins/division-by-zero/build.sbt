@@ -1,4 +1,4 @@
-import Dependencies._
+import Dependencies.*
 
 lazy val useDivisionByZero = (project in file("."))
   .aggregate(useDivisionByZeroScala2, useDivisionByZeroScala3)
