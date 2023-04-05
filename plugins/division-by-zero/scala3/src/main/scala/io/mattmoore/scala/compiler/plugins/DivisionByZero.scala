@@ -23,8 +23,8 @@ class DivisionByZeroPhase extends PluginPhase:
 
   val phaseName = "divideZero"
 
-  override val runsAfter = Set(Staging.name)
-  override val runsBefore = Set(PickleQuotes.name)
+  override val runsAfter: Set[String] = Set(Staging.name)
+  override val runsBefore: Set[String] = Set(PickleQuotes.name)
 
   override def transformApply(tree: Apply)(implicit ctx: Context): Tree =
     tree match

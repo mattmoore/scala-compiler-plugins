@@ -1,19 +1,15 @@
-ThisBuild / version := "0.1.0-SNAPSHOT"
+import Dependencies._
 
-lazy val scala2Version = "2.13.10"
-lazy val scala3Version = "3.2.2"
-
-lazy val root = (project in file("."))
+lazy val useDivisionByZero = (project in file("."))
   .aggregate(scala2, scala3)
   .settings(
     name := "Using the divison-by-zero plugin.",
-    crossScalaVersions := Nil,
+    crossScalaVersions := List(scala2Version, scala3Version),
     publish / skip := true,
   )
 
 lazy val scala2 = project
   .settings(
-    organization := "io.mattmoore.scala.compiler.plugins",
     name := "Using the division-by-zero plugin for Scala 2.",
     scalaVersion := scala2Version,
     autoCompilerPlugins := true,
@@ -22,7 +18,6 @@ lazy val scala2 = project
 
 lazy val scala3 = project
   .settings(
-    organization := "io.mattmoore.scala.compiler.plugins",
     name := "Using the division-by-zero plugin for Scala 3.",
     scalaVersion := scala3Version,
     autoCompilerPlugins := true,

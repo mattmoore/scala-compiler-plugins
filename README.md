@@ -20,8 +20,7 @@ There are two categories in this repo:
 First, compile and publish the plugin as a jar file to your local Ivy repo:
 
 ```scala
-cd plugins/division-by-zero
-sbt compile package publishLocal
+sbt clean compile package publishLocal
 ```
 
 Next, use the plugin in your project by adding to build.sbt following lines:
@@ -32,7 +31,11 @@ addCompilerPlugin("io.mattmoore.scala.compiler.plugins" %% "division-by-zero" % 
 resolvers += Resolver.mavenLocal
 ```
 
-The `build.sbt` configuration above is in the [use-plugins/division-by-zero/build.sbt](use-plugins/division-by-zero/build.sbt) file already.
+The `build.sbt` configuration above is in the [use-plugins/division-by-zero/build.sbt](use-plugins/division-by-zero/build.sbt) file already. You can test this existing project. From the project's root directory:
+
+```shell
+sbt useDivisionByZero/clean useDivisionByZero/compile
+```
 
 You can experiment with turning the plugin on or off. Just comment the `addCompilerPlugin` line out to disable it.
 
