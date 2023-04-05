@@ -1,9 +1,14 @@
 # Scala 2 / Scala 3 Compiler Plugin Examples
 
-Examples of how to build Scala compiler plugins.
+Examples of how to build Scala compiler plugins for both Scala 2 and Scala 3.
 
-Compile-time checking of code is a useful feature because it allows us to catch possible issues before we try to run the program. Scala does a lot of awesome checking at compile time, but there are some things it doesn't do (such as division by zero).
+## Why would I write a compiler plugin?
 
+Compiler plugins allow you to extend the Scala programming language.
+
+You could enhance compile-time checking - for example, compile-time checking of division by zero, which is one of the examples contained in this project. Compile-time checking of code is a useful feature because it allows us to catch possible issues before we try to run the program.
+
+Another reason might be extending the language with DSLs, or replacing existing code with different code - perhaps replacing placeholders with expanded functionality like automatic logging, or auto-generating code.
 
 ## A note on Scala 2 / Scala 3 Compatibility
 
@@ -11,11 +16,9 @@ The Scala 3 compiler is also called `dotty`.
 
 Compiler plugins for Scala 2 and Scala 3 are incompatible. Scala 3 has changed the plugin system, and it is quite different from the way Scala 2 works. Scala 3 removed the older analysis plugins that Scala 2 had. Instead, it now provides the `StandardPlugin` and `ResearchPlugin` types.
 
-`StandardPlugin`: No ability to modify type information at compile time anymore. This is to prevent a compiler author from breaking type safety.
+`StandardPlugin`: What you'll use in 99% of cases, given that `ResearchPlugin` does not work with stable production builds of Scala 3. You will typically want to use a `StandardPlugin` for any plugins intended for general use. One major difference from Scala 2 to Scala 3 is that the new `StandardPlugin` has no ability to modify type information at compile time anymore, unlike Scala 2's `AnalyzerPlugin`. This is to prevent a compiler author from breaking type safety.
 
 `ResearchPlugin`: Allows you to fully control all phases across the compilation pipeline. For more information, see [Changes in Compiler Plugins](https://dotty.epfl.ch/docs/reference/changed-features/compiler-plugins.html). Using a `ResearchPlugin` requires a snapshot or nightly version of the Scala 3 compiler to run. If you try using them with the stable release of Scala 3, the compiler won't emit a warning, the research plugin simply won't work. If you find yourself scratching your head, check that you are using an appropriate snapshot version of the compiler.
-
-Given that `ResearchPlugin` doesn't work with stable production builds of Scala 3, you will typically want to use a `StandardPlugin` for any plugins intended for general use.
 
 ## Repo Structure
 
