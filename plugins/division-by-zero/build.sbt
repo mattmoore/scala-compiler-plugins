@@ -1,4 +1,4 @@
-import Dependencies._
+import Dependencies.*
 
 lazy val divisionByZeroPlugin = (project in file("."))
   .aggregate(

@@ -1,4 +1,4 @@
-import Dependencies._
+import Dependencies.*
 
 lazy val divisionByZeroScala3Plugin = (project in file("."))
   .settings(
