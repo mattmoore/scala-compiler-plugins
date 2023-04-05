@@ -23,5 +23,3 @@ lazy val useDivisionByZeroScala3 = (project in file("scala3"))
     autoCompilerPlugins := true,
     addCompilerPlugin("io.mattmoore.scala.compiler.plugins" %% "division-by-zero" % "0.0.1-SNAPSHOT")
   )
-
-resolvers += Resolver.mavenLocal

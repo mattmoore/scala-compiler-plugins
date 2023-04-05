@@ -28,8 +28,7 @@ class DivisionByZeroPhase extends PluginPhase:
 
   override def transformApply(tree: Apply)(implicit ctx: Context): Tree =
     tree match
-      case Apply(Select(rcvr, nme.DIV), List(Literal(Constant(0))))
-        if rcvr.tpe <:< defn.IntType =>
+      case Apply(Select(rcvr, nme.DIV), List(Literal(Constant(0)))) if rcvr.tpe <:< defn.IntType =>
         report.error("Attempting division by zero.", tree.sourcePos)
       case _ =>
         ()

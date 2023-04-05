@@ -7,9 +7,9 @@ import dotty.tools.dotc.plugins.ResearchPlugin
 import dotty.tools.dotc.transform.*
 
 class InspectorResearchPlugin extends ResearchPlugin {
-    val name: String = "inspector"
-    override val description: String = "inspector research plugin"
+  val name: String = "inspector"
+  override val description: String = "inspector research plugin"
 
-    def init(options: List[String], phases: List[List[Phase]])(implicit ctx: Context): List[List[Phase]] =
-        phases
+  def init(options: List[String], phases: List[List[Phase]])(implicit ctx: Context): List[List[Phase]] =
+    phases
 }
