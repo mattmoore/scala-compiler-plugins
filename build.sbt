@@ -21,3 +21,11 @@ lazy val useDivisionByZero = project in file("use-plugins/division-by-zero")
 lazy val useInspector = project in file("use-plugins/inspector")
 
 resolvers += Resolver.mavenLocal
+
+lazy val publishPluginsLocal = taskKey[Unit]("myTask")
+publishPluginsLocal := {
+  Command.process("clean", state.value)
+  Command.process("compile", state.value)
+  Command.process("package", state.value)
+  Command.process("publishLocal", state.value)
+}
