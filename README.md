@@ -34,10 +34,21 @@ The first step here is to compile and publish all the plugins locally.
 From the shell:
 
 ```shell
-sbt clean compile package publishLocal
+sbt publishPluginsLocal
 ```
 Or from an sbt session (by typing `sbt` and hitting enter):
 
+```shell
+publishPluginsLocal
+```
+
+Note: `publishPluginsLocal` is a custom `sbt` task. It invokes the following `sbt` commands:
+
+```shell
+sbt clean compile package publishLocal
+```
+
+Or from an sbt session:
 ```shell
 clean;compile;package;publishLocal
 ```
